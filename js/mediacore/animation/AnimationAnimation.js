@@ -28,7 +28,7 @@ class AnimationAnimation extends AnimationObject {
 	//-------------------------
 	// View Management
 	//-------------------------
-	// Adds an animation view configuration to the stack.
+	// Adds an animation view configuration to the pile.
 	// RETURNS: [object] AnimationView on success else [null] on fail.
 	// * name		- [string] Value of view name (e.g. 'player').
 	addView( name ) {
@@ -46,11 +46,11 @@ class AnimationAnimation extends AnimationObject {
 			view.loopOn();
 		// Set group attributes
 		view.setAttribute( 'groups', Array.from(this.groups) );
-		this.views[name] = view;	// Add to stack
+		this.views[name] = view;	// Add to pile
 		return view;				// Return view [object]
 	}
 
-	// Removes an animation configuration from the stack.
+	// Removes an animation configuration (e.g. "AnimationView") from the pile.
 	// RETURNS: [boolean] `true` on success else `false` on fail.
 	// * name		- [string] Value of view name (e.g. 'player').
 	removeView( name ) {
@@ -63,19 +63,19 @@ class AnimationAnimation extends AnimationObject {
 	//-------------------------
 	// Frame Handling
 	//-------------------------
-	// Adds a frame to the sprite.
+	// Adds a frame to the animation.
 	// RETURNS: [void].
 	// * frame	- [object] Frame to add to animation (containing layers with sprites)
 	addFrame( frame ) {
 		if ( !(frame instanceof AnimationFrame) )
 			throw new Error( 'Invalid frame object' );
-		// Add frame to frame stack
+		// Add frame to frame pile
 		this.frames.push( frame );
 		// Increase sprite duration to include frame duration
 		this.recalculateDuration();		// Ensure duration stays consistent
 	}
 
-	// Recalibrate the duration of the animation based upon frames
+	// Remove a frame from the animation.
 	// RETURNS: [void].
 	// * index		- [int] value of index to remove
 	removeFrame( index ) {
