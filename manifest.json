@@ -1,0 +1,251 @@
+{
+	"manifest_version":		2,
+	"name":					"JEST® Apps (vers. 0.0)",
+	"version":				"0.0",
+	"description":			"Opens a pseudo-OS GUI & equips custom apps, like games.",
+	"permissions":
+		[
+			"storage",
+			"activeTab",
+			"tabs"
+		],
+	"background":
+		{
+			"scripts":
+				[
+					"background.js"
+				],
+			"persistent": true
+		},
+	"browser_action":
+		{
+			"default_title": "JEST® Apps",
+			"default_icon":
+				{
+					"48": "icons/icon-48.png",
+					"96": "icons/icon-96.png"
+				}
+		},
+	"icons":
+		{
+			"48": "icons/icon-48.png",
+			"96": "icons/icon-96.png"
+		},
+	"content_scripts":
+		[
+			{
+				"matches":	[ "<all_urls>" ],
+				"css":
+					[
+						"js/widgets/loadbar/css/Loadbar.css",
+						"js/widgets/tooltip/css/Tooltip.css",
+						"js/system/window/css/BaseWindow.css",
+						"js/system/window/css/Window.css",
+						"js/libraries/harlequin/css/LibraryHarlequinWindow.css",
+						"js/libraries/harlequin/css/LibraryHarlequinButtons.css",
+						"js/modules/menus/Dock/css/Dock.css",
+
+						"css/animation.css",
+						"css/environment.css",
+						"css/notification.css"
+					],
+				"js":
+					[
+						"content.js",
+
+						"js/includes/prototype/Array.js",
+
+						"js/os/OSConfigurable.js",
+						"js/os/OSCallback.js",
+						"js/os/OSObject.js",
+						"js/os/OSDocument.js",
+						"js/os/OSEventTarget.js",
+						"js/os/OSElement.js",
+
+						"js/system/dom/element/ElementCanvas.js",
+						"js/system/dom/element/ElementImage.js",
+						"js/system/dom/element/ElementAudio.js",
+
+						"js/mediacore/context/Anchor.js",
+						"js/mediacore/animation/AnimationObject.js",
+						"js/mediacore/animation/AnimationAnimator.js",
+						"js/mediacore/animation/AnimationView.js",
+						"js/mediacore/animation/AnimationAnimation.js",
+						"js/mediacore/animation/AnimationFrame.js",
+						"js/mediacore/animation/AnimationLayer.js",
+						"js/mediacore/animation/AnimationSprite.js",
+						"js/mediacore/pacing/Timeout.js",
+
+						"js/widgets/loadbar/Loadbar.js",
+						"js/widgets/tooltip/Tooltip.js",
+						"js/system/components/hooks/Hooks.js",
+						"js/system/components/hooks/HooksManager.js",
+						"js/system/components/panel/Panel.js",
+						"js/system/components/panel/PanelElement.js",
+						"js/system/components/panel/PanelForm.js",
+						"js/system/components/panel/PanelFormButton.js",
+						"js/system/components/panel/PanelFormDropdown.js",
+						"js/system/window/BaseWindow.js",
+						"js/system/window/Window.js",
+						"js/system/forms/FormBuilder.js",
+						"js/os/OSLibrary.js",
+						"js/os/OSLibrarian.js",
+
+						"js/system/interface/JSOS/classes/jsos.parse.js",
+						"js/system/interface/JSOS/classes/jsos.validation.js",
+						"js/system/interface/JSOS/classes/jsos.readwrite.js",
+						"js/system/interface/JSOS/classes/jsos.utility.js",
+						"js/system/interface/JSOS/jsos.interface.js",
+						"js/system/interface/JSOS/jsos.environment.js",
+
+						"js/libraries/harlequin/LibraryHarlequin.js",
+						"js/libraries/harlequin/LibraryHarlequinWindow.js",
+
+						"js/system/application/Application.js",
+						"js/modules/menus/Dock/Dock.js",
+						"js/modules/menus/Dock/DockShortcut.js",
+						"js/modules/menus/Dock/DockShortcuts.js",
+
+						"js/apps/jest/components/JestJaniParser.js",
+						"js/apps/jest/components/JestLevelParser.js",
+						"js/apps/jest/components/JestTransmitter.js",
+						"js/apps/jest/components/JestGamepiece.js",
+						"js/apps/jest/components/JestSavable.js",
+						"js/apps/jest/components/JestWorldling.js",
+						"js/apps/jest/components/JestConfiguration.js",
+						"js/apps/jest/components/JestGallery.js",
+						"js/apps/jest/components/JestFiler.js",
+						"js/apps/jest/components/JestTiledefs.js",
+						"js/apps/jest/components/JestTileset.js",
+						"js/apps/jest/components/JestTiledefsParser.js",
+						"js/apps/jest/components/JestFantascope.js",
+						"js/apps/jest/components/JestSoundParser.js",
+						"js/apps/jest/components/JestSoundboard.js",
+						"js/apps/jest/components/JestGameboard.js",
+						"js/apps/jest/components/JestOverworld.js",
+						"js/apps/jest/components/JestSound.js",
+						"js/apps/jest/components/JestLevel.js",
+						"js/apps/jest/components/JestCamera.js",
+						"js/apps/jest/components/JestInputOutput.js",
+						"js/apps/jest/components/JestInspector.js",
+						"js/apps/jest/components/play/JestPlayer.js",
+						"js/apps/jest/Jest.js",
+						"js/apps/jest/clients/JestPlay.js",
+
+						"js/system/data/Transmission.js",
+						"js/system/data/Inquiry.js",
+
+						"js/notification.js"
+					]
+			}
+		],
+	"web_accessible_resources":
+		[
+			"js/widgets/loadbar/css/Loadbar.css",
+			"js/widgets/tooltip/css/Tooltip.css",
+			"js/system/window/css/BaseWindow.css",
+			"js/system/window/css/Window.css",
+			"js/libraries/harlequin/css/LibraryHarlequinWindow.css",
+			"js/libraries/harlequin/css/LibraryHarlequinButtons.css",
+			"js/modules/menus/Dock/css/Dock.css",
+
+			"css/animation.css",
+			"css/environment.css",
+			"css/notification.css",
+
+			"js/includes/prototype/Array.js",
+
+			"js/os/OSConfigurable.js",
+			"js/os/OSCallback.js",
+			"js/os/OSObject.js",
+			"js/os/OSDocument.js",
+			"js/os/OSEventTarget.js",
+			"js/os/OSElement.js",
+
+			"js/system/dom/element/ElementCanvas.js",
+			"js/system/dom/element/ElementImage.js",
+			"js/system/dom/element/ElementAudio.js",
+
+			"js/mediacore/context/Anchor.js",
+			"js/mediacore/animation/AnimationObject.js",
+			"js/mediacore/animation/AnimationAnimator.js",
+			"js/mediacore/animation/AnimationView.js",
+			"js/mediacore/animation/AnimationAnimation.js",
+			"js/mediacore/animation/AnimationFrame.js",
+			"js/mediacore/animation/AnimationLayer.js",
+			"js/mediacore/animation/AnimationSprite.js",
+			"js/mediacore/pacing/Timeout.js",
+
+			"js/widgets/loadbar/Loadbar.js",
+			"js/widgets/tooltip/Tooltip.js",
+			"js/system/components/hooks/Hooks.js",
+			"js/system/components/hooks/HooksManager.js",
+			"js/system/components/panel/Panel.js",
+			"js/system/components/panel/PanelElement.js",
+			"js/system/components/panel/PanelForm.js",
+			"js/system/components/panel/PanelFormButton.js",
+			"js/system/components/panel/PanelFormDropdown.js",
+			"js/system/window/BaseWindow.js",
+			"js/system/window/Window.js",
+			"js/system/forms/FormBuilder.js",
+			"js/os/OSLibrary.js",
+			"js/os/OSLibrarian.js",
+
+			"js/system/interface/JSOS/classes/jsos.parse.js",
+			"js/system/interface/JSOS/classes/jsos.validation.js",
+			"js/system/interface/JSOS/classes/jsos.readwrite.js",
+			"js/system/interface/JSOS/classes/jsos.utility.js",
+			"js/system/interface/JSOS/jsos.interface.js",
+			"js/system/interface/JSOS/jsos.environment.js",
+
+			"js/libraries/harlequin/LibraryHarlequin.js",
+			"js/libraries/harlequin/LibraryHarlequinWindow.js",
+
+			"js/system/application/Application.js",
+			"js/modules/menus/Dock/Dock.js",
+			"js/modules/menus/Dock/DockShortcut.js",
+			"js/modules/menus/Dock/DockShortcuts.js",
+
+			"js/apps/jest/components/JestJaniParser.js",
+			"js/apps/jest/components/JestLevelParser.js",
+			"js/apps/jest/components/JestTransmitter.js",
+			"js/apps/jest/components/JestGamepiece.js",
+			"js/apps/jest/components/JestSavable.js",
+			"js/apps/jest/components/JestWorldling.js",
+			"js/apps/jest/components/JestConfiguration.js",
+			"js/apps/jest/components/JestGallery.js",
+			"js/apps/jest/components/JestFiler.js",
+			"js/apps/jest/components/JestTiledefs.js",
+			"js/apps/jest/components/JestTileset.js",
+			"js/apps/jest/components/JestTiledefsParser.js",
+			"js/apps/jest/components/JestSoundParser.js",
+			"js/apps/jest/components/JestSoundboard.js",
+			"js/apps/jest/components/JestFantascope.js",
+			"js/apps/jest/components/JestGameboard.js",
+			"js/apps/jest/components/JestOverworld.js",
+			"js/apps/jest/components/JestSound.js",
+			"js/apps/jest/components/JestLevel.js",
+			"js/apps/jest/components/JestCamera.js",
+			"js/apps/jest/components/JestInputOutput.js",
+			"js/apps/jest/components/JestInspector.js",
+			"js/apps/jest/components/play/JestPlayer.js",
+			"js/apps/jest/Jest.js",
+			"js/apps/jest/clients/JestPlay.js",
+
+			"js/system/data/Transmission.js",
+			"js/system/data/Inquiry.js",
+
+			"js/notification.js",
+
+			"icons/icon-48.png",
+			"icons/icon-96.png",
+			"icons/icon-fullsize.png",
+
+			"images/jest_logo_white.png",
+			"images/icons/jest_hat.png",
+			"images/icons/med_book1.png",
+			"images/icons/sm_notice.png",
+			"images/icons/sm_gear.png",
+			"images/icons/sm_profile.png"
+		]
+}

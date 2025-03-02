@@ -1,0 +1,151 @@
+/* --------------------- */
+/* Animations            */
+/* --------------------- */
+/* Dropping With Bounce */
+@keyframes slideDownBounce {
+    0% {
+        transform: translateY( -20px );
+    }
+    50% {
+        transform: translateY( 10px );
+    }
+    100% {
+        transform: translateY( 0 );
+    }
+}
+/* Shrinking & Growing Oscillation */
+@keyframes growShrink {
+    0% {
+        transform: scale( 0.9 ); /* Original size */
+    }
+    50% {
+        transform: scale( 1.1 ); /* Grow to 1.5x */
+    }
+    100% {
+        transform: scale( 0.9 ); /* Shrink back to original size */
+    }
+}
+
+/* Apply this to your element */
+.jest-ani-oscillate {
+    display: inline-block; /* Ensures the animation works correctly on inline elements */
+    animation: growShrink 1s ease-in-out infinite;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Keyframes for pulse effect */
+@keyframes green-pulse {
+    0% {
+        transform: scale( 1 );
+        box-shadow: 0 0 20px rgba( 72, 239, 129, 1 );
+    }
+    50% {
+        transform: scale( 1.1 );
+        box-shadow: 0 0 40px rgba( 72, 239, 129, 1 );
+    }
+    100% {
+        transform: scale( 1 );
+        box-shadow: 0 0 20px rgba( 72, 239, 129, 0.8 );
+    }
+}
+
+/* Fiery glow animation */
+@keyframes fiery-glow {
+    0% {
+        transform: scale( 1 );
+        box-shadow: 0 0 20px rgba( 255, 22, 0, 1 ); /* Fiery orange glow */
+    }
+    50% {
+        transform: scale( 1.1 );
+        box-shadow: 0 0 40px rgba( 255, 22, 0, 1 ); /* Larger fiery glow */
+    }
+    100% {
+        transform: scale( 1 );
+        box-shadow: 0 0 20px rgba( 255, 22, 0, 0.8 ); /* Subtle fade */
+    }
+}
+
+/* --------------------- */
+/* Visibility Animations */
+/* --------------------- */
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* ------------------------ */
+/* Shrink & Grow Animations */
+/* ------------------------ */
+/* Minimize animation */
+@keyframes minimize {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8) translateY(300px);
+        opacity: 0;
+    }
+}
+
+/* Maximize animation */
+@keyframes expand {
+    0% {
+        transform: scale(0.8) translateY(300px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Expand Then Shrink Back to Normal Size */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ------------------------ */
+/* Bounce & Leap            */
+/* ------------------------ */
+/* Jump Animation */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

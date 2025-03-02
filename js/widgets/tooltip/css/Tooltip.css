@@ -1,0 +1,18 @@
+/* --------------------- */
+/* Jest Tooltip          */
+/* --------------------- */
+/* Tooltip Styling */
+.jest-tooltip {
+	position: absolute;
+	bottom: 80px;
+	left: 50%;
+	transform: translateX(-50%) translateY(10px);
+	padding: 0.5rem 1rem;
+	font-size: 0.85rem;
+	background: rgba(0, 0, 0, 0.8);
+	color: white;
+	border-radius: 4px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}

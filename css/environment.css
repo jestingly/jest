@@ -1,0 +1,17 @@
+/* --------------------- */
+/* Jest Environment      */
+/* --------------------- */
+#jest-environment {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+#jest-plugin-logo {
+    position: absolute;
+    bottom: 0; right: 0;
+    max-width: 75px;
+    max-height: 75px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

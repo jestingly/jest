@@ -1,0 +1,14 @@
+/* ------------------------- */
+/* Header Styles               */
+/* ------------------------- */
+.jest-window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    /*background-color: #333;*/
+    border-bottom: 1px solid #444;
+    color: #eee;
+    font-size: 1em;
+    font-weight: bold;
+}

@@ -1,0 +1,136 @@
+/* Container for stacking notifications */
+#jest-notification-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-height: calc(100vh - 20px); /* Prevent overflow */
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100000;
+}
+
+/* Notification box styles */
+.jest-notification {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 100000;
+}
+.jest-notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba( 33, 33, 33, 0.8 ); /*#333;*/
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba( 0, 0, 0, 0.3 );
+    opacity: 0;
+    transform: scale( 0.5 );
+    position: relative;
+    transition:
+        translate 0.3s cubic-bezier(0.25, 1.5, 0.5, 1),
+        transform 0.3s cubic-bezier(0.25, 1.5, 0.5, 1),
+        opacity 0.3s ease; /* Unified transition */
+    overflow: hidden;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/* Show animation */
+.jest-notification.jest-notif-show {
+    opacity: 1;
+    transform: scale( 1 );
+}
+
+/* Sliding animation */
+.jest-notification.jest-notif-slide-out-right {
+    translate: 100%;
+}
+.jest-notification.jest-notif-slide-out-left {
+    translate: -100%;
+}
+.jest-notification.jest-notif-slide-reset {
+    translate: 0;
+}
+
+/* Fade-out animation */
+.jest-notification.jest-notif-fade-out {
+    opacity: 0;
+    transform: scale( 0.5 );
+}
+
+/* Dragging styles */
+.jest-notification.jest-notif-slide-dragging {
+    transition: none;
+    cursor: grabbing;
+}
+
+/* Notification icon */
+.jest-notification-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+
+    /*background-image: url("https://i.sstatic.net/lJpW8.png");
+    height:calc(100px / 5);
+    width:calc(100px / 5);
+    background-position:calc(3/5 * 100px) 0px;
+    background-size:calc(500px / 5) calc(400px / 5);*/
+}
+
+/* Text styles */
+.jest-notification-text {
+    flex: 1;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Buttons container */
+.jest-notification-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+/* Button styles */
+.jest-notification-button {
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Matches the notification height */
+}
+
+/* Button hover effect */
+.jest-notification-button:hover {
+    background: #777;
+    transform: scale(1.05);
+}
+
+/* Button active effect */
+.jest-notification-button:active {
+    background: #999;
+    transform: scale(1);
+}
+
+/* New class for slide-down bounce */
+.jest-notification.jest-notif-bounce-down {
+    animation: slideDownBounce 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+}

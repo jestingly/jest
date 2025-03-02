@@ -1,0 +1,64 @@
+/* ------------------------- */
+/* Window Styles             */
+/* ------------------------- */
+/* Window Controls */
+.jest-window-controls {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.jest-window-controls button {
+    background: #444;
+    color: #eee;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.jest-window-controls button:hover {
+    transform: scale(1.1);
+    background: #f55;
+}
+
+
+/* ------------------------- */
+/* Window Styles             */
+/* ------------------------- */
+/* Dragging styles */
+.jest-window {
+    position: fixed; /* Ensure draggable positioning */
+    cursor: default;
+}
+/* Resize handles */
+.resize-handle {
+    position: absolute;
+    background: transparent;
+    z-index: 10;
+}
+.resize-top {
+    top: 0; left: 0; right: 0; height: 5px; cursor: ns-resize;
+}
+.resize-right {
+    top: 0; right: 0; bottom: 0; width: 5px; cursor: ew-resize;
+}
+.resize-bottom {
+    bottom: 0; left: 0; right: 0; height: 5px; cursor: ns-resize;
+}
+.resize-left {
+    top: 0; left: 0; bottom: 0; width: 5px; cursor: ew-resize;
+}
+.resize-top-left {
+    top: 0; left: 0; width: 10px; height: 10px; cursor: nwse-resize;
+}
+.resize-top-right {
+    top: 0; right: 0; width: 10px; height: 10px; cursor: nesw-resize;
+}
+.resize-bottom-left {
+    bottom: 0; left: 0; width: 10px; height: 10px; cursor: nesw-resize;
+}
+.resize-bottom-right {
+    bottom: 0; right: 0; width: 10px; height: 10px; cursor: nwse-resize;
+}

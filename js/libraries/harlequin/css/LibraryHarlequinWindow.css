@@ -1,0 +1,82 @@
+/* ------------------------- */
+/* Modal Base Styles         */
+/* ------------------------- */
+/*.jest-style-harlequin.jest-window {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    animation: fadeIn 0.5s ease;
+}
+
+.jest-style-harlequin.jest-window-content {
+    position: relative;
+    background: #222;
+    color: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    transition: transform 0.3s, opacity 0.3s;
+}*/
+
+/* ------------------------- */
+/* Panel Styles             */
+/* ------------------------- */
+.jest-style-harlequin.jest-window-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    /*background-color: #333;*/
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+.jest-window-header .jest-window-title {
+	font-size: 12px;
+}
+.jest-window.minimized .jest-window-header .jest-window-title {
+	font-size: 12px;
+}
+.jest-window-header .jest-window-icon {
+    max-width: 32px;
+    max-height: 32px;
+    margin-right: 5px;
+}
+.jest-window.minimized .jest-window-header .jest-window-icon {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+/* --------------------------- */
+/* Minimize & Maximize Buttons */
+/* --------------------------- */
+.jest-style-harlequin.jest-window-controls button {
+    background: linear-gradient( 135deg, #333, #444 );
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.jest-style-harlequin.jest-window-controls button:hover {
+    background: linear-gradient( 135deg, #555, #666 );
+    box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.5 );
+    transform: scale(1.1);
+}
+
+.jest-style-harlequin.jest-window-controls button:active {
+    transform: scale( 0.9 );
+    background: linear-gradient( 135deg, #222, #333 );
+}
