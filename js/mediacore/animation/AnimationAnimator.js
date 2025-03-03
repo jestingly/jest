@@ -17,7 +17,6 @@ class AnimationAnimator {
 	// Canvas Management
 	//-------------------------
 	// Sets the canvas element
-	// RETURNS: [void].
 	// * canvas		- [object] Canvas element to set
 	setCanvas( canvas ) {
 		if ( !(canvas instanceof HTMLCanvasElement) )
@@ -29,15 +28,15 @@ class AnimationAnimator {
 	// Animation Management
 	//-------------------------
 	// Adds an animation to the stack of animations.
-	// * animation		- [object] Animation instance to add.
 	// RETURNS: [void].
+	// * animation		- [object] Animation instance to add.
 	add( animation ) {
 		this.animations.add( animation );
 	}
 
 	// Removes an animation from the stack of animations.
-	// * animation		- [object] Animation instance to remove.
 	// RETURNS: [void].
+	// * animation		- [object] Animation instance to remove.
 	remove( animation ) {
 		this.animations.delete( animation ); // Remove animation
 	}
@@ -46,10 +45,10 @@ class AnimationAnimator {
 	// Rendering Methods
 	//-------------------------
 	// Updates all animations in the stack of animations.
+	// RETURNS: [void].
 	// * elapsedTime	- how much time has passed since the ticker started.
 	// * tickDelay		- how much time between each tick (ie. 60ms)
 	// * tickCount		- how many ticks have occurred
-	// RETURNS: [void].
 	update( { elapsedTime, tickDelay, tickCount } ) {
 		// Iterate each animation & update it
 		this.animations.forEach(

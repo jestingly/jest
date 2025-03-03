@@ -3,6 +3,7 @@ console.log( 'jestAlert: js/mediacore/animation/AnimationView.js loaded' );
 //-------------------------
 // AnimationView Class
 //-------------------------
+// Animation configuration "view" [object] for calibrating dynamic variable(s).
 class AnimationView extends AnimationObject {
 	// Object reference(s).
 	animation	= null;				// [object] Animation this View is configuring.
@@ -25,7 +26,6 @@ class AnimationView extends AnimationObject {
 	// Instantiation
 	//-------------------------
 	// Construct the [object].
-	// RETURNS: [void].
 	// * animation	- [object] Animation instance to add.
 	// * name		- [string] Name of the animation.
 	//   x			- [int] value of horizontal offset relative to sprite
@@ -144,8 +144,8 @@ class AnimationView extends AnimationObject {
 	// Rendering
 	//-------------------------
 	// Updates the animation's progress.
-	// * tickDelay	- the FPS of the ticker (ie. 60 = 60ms/1000ms or 60fps)
 	// RETURNS: [void].
+	// * tickDelay	- the FPS of the ticker (ie. 60 = 60ms/1000ms or 60fps)
 	update( tickDelay ) {
 		//-------------------------
 		// Determine If Playable

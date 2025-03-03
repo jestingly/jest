@@ -3,7 +3,7 @@ console.log( 'jestAlert: js/mediacore/animation/AnimationSprite.js loaded' );
 //-------------------------
 // AnimationSprite Class
 //-------------------------
-// Represents a sprite object, extending the Animation class.
+// A categorized & named "clip" region inside a spritesheet, belonging to an animation.
 class AnimationSprite extends Anchor {
 	// Declare properties
 	id			= 0;				// [string] value of sprite id (e.g. 0)
