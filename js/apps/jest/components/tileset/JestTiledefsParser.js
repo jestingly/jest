@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestTiledefsParser.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/tileset/JestTiledefsParser.js loaded' );
 
 //-------------------------
 // JestTiledefsParser Class

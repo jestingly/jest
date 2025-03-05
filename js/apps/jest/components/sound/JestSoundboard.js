@@ -1,4 +1,4 @@
-console.log( `js/app/jest/JestSoundboard.js loaded` );
+console.log( 'jestAlert: js/apps/jest/components/sound/JestSoundboard.js loaded' );
 
 //-------------------------
 // JestSoundboard Class

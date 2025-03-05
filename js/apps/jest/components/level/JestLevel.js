@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestLevel.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/level/JestLevel.js loaded' );
 
 //-------------------------
 // JestLevel Class

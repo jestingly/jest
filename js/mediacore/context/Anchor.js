@@ -84,6 +84,13 @@ class Anchor extends OSCallback {
 		this.z			= z ?? this.z;			// [int] Z index offset relative to parent(s)
 	}
 
+	// Raise or lower the z-value of the [object].
+	// RETURNS: [void].
+	// * z			- [int] value of z index relative to parent(s)
+	setZ( z ) {
+		this.z			= this.z;				// [int] Z index offset relative to parent(s)
+	}
+
 	//-------------------------
 	// Definition Methods
 	//-------------------------
@@ -119,10 +126,10 @@ class Anchor extends OSCallback {
 	//-------------------------
 	// Dimension Handling
 	//-------------------------
-	// Set width/height
+	// Set width / height
 	set width( value ) { this.width = value; }
 	set height( value ) { this.height = value; }
-	// Get width/height
+	// Get width / height
 	get width() { return this.width; }
 	get height() { return this.height; }
 

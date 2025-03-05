@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestTiledefs.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/tileset/JestTiledefs.js loaded' );
 
 //-------------------------
 // JestTiledefs Class

@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestFiler.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/file/JestFiler.js loaded' );
 
 //-------------------------
 // JestFiler Class

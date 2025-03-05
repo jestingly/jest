@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestLevelParser.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/level/JestLevelParser.js loaded' );
 
 //-------------------------
 // NWFileParser Class

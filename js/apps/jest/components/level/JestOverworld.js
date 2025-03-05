@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestOverworld.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/level/JestOverworld.js loaded' );
 
 //-------------------------
 // JestOverworld Class

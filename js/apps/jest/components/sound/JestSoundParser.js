@@ -1,4 +1,4 @@
-console.log( 'jestAlert: js/apps/jest/components/JestSoundParser.js loaded' );
+console.log( 'jestAlert: js/apps/jest/components/sound/JestSoundParser.js loaded' );
 
 //-------------------------
 // JestSoundParser Class
