@@ -13,7 +13,6 @@ class AnimationFrame {
 	// Instantiation
 	//-------------------------
 	// Declare properties.
-	// RETURNS: [void].
 	//   duration	- [int] value of duration of the frame in ms (defaults to 60)
 	constructor( duration=null ) {
 		this.duration	= duration ?? 1000/60*4;	// Duration of the frame in ms

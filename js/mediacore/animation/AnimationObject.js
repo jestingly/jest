@@ -3,7 +3,7 @@ console.log( 'jestAlert: js/mediacore/animation/AnimationObject.js loaded' );
 //-------------------------
 // AnimationObject Class
 //-------------------------
-// Animation objects extend the anchor class; they are considered movable screen objects. 
+// Animation objects extend the anchor class; they are considered movable screen objects.
 class AnimationObject extends Anchor {
 	// Attributes.
 	attributes	= {};				// [object] Attributes controlling animation
@@ -23,8 +23,8 @@ class AnimationObject extends Anchor {
 	//-------------------------
 	// Adds or updates a single valid type
 	// RETURNS: [void]
-	// * key		- [String] The attribute name
-	// * type		- [String] The expected data type (e.g., "number", "string", "boolean")
+	// * key		- [string] The attribute name
+	// * type		- [string] The expected data type (e.g., "number", "string", "boolean")
 	addAttrType( key, type ) {
 		// Validate argument(s)
 		if ( typeof key!=="string" )
@@ -37,7 +37,7 @@ class AnimationObject extends Anchor {
 
 	// Adds or updates multiple valid types at once
 	// RETURNS: [void]
-	// * types		- [Object] Mapping of attribute names to expected types
+	// * types		- [object] Mapping of attribute names to expected types
 	setAttrTypes( types ) {
 		// Validate argument(s)
 		if ( typeof types!=="object" || types===null )
@@ -49,7 +49,7 @@ class AnimationObject extends Anchor {
 
 	// Removes a single valid type
 	// RETURNS: [Boolean] True if removed, False if key was not found
-	// * key		- [String] The attribute name
+	// * key		- [string] The attribute name
 	removeAttrType( key ) {
 		// Validate argument(s)
 		if ( typeof key!=="string" )
@@ -64,7 +64,7 @@ class AnimationObject extends Anchor {
 
 	// Removes multiple valid types at once
 	// RETURNS: [Object] Key-value pairs of removed types
-	// * ...keys	- [String] List of attribute names
+	// * ...keys	- [string] List of attribute names
 	removeAttrTypes( ...keys ) {
 		// Validate argument(s)
 		if ( !keys.every( k => typeof k==="string" ) )
@@ -83,8 +83,8 @@ class AnimationObject extends Anchor {
 
 	// Sets a single animation attribute with validation
 	// RETURNS: [void]
-	// * key		- [String] Attribute name
-	// * value		- [Any] Attribute value
+	// * key		- [string] Attribute name
+	// * value		- [any] Attribute value
 	setAttribute( key, value ) {
 		// Validate argument(s)
 		if ( typeof key!=="string" )
@@ -110,6 +110,8 @@ class AnimationObject extends Anchor {
 	// Validates and sets animation attributes
 	// RETURNS: [void]
 	// * attributes - [object] Attributes to control animation.
+	//		<key> [string]	- attribute name
+	//		<value> [any]	- attribute value
 	setAttributes( attributes ) {
 		// Validate argument(s)
 		if ( typeof attributes!=="object" || attributes===null )
@@ -133,7 +135,7 @@ class AnimationObject extends Anchor {
 
 	// Retrieves multiple attributes at once
 	// RETURNS: [Object] Key-value pairs of requested attributes
-	// * ...keys	- [String] List of attribute names
+	// * ...keys	- [string] List of attribute names
 	getAttributes( ...keys ) {
 		// Validate argument(s)
 		if ( !keys.every( k => typeof k==="string" ) )
@@ -149,7 +151,7 @@ class AnimationObject extends Anchor {
 
 	// Unsets (removes) a attribute
 	// RETURNS: [boolean] True if removed, False if key was not found
-	// * key	- [String] The attribute name
+	// * key	- [string] The attribute name
 	unsetAttribute( key ) {
 		// Validate argument(s)
 		if ( typeof key!=="string" )
@@ -164,7 +166,7 @@ class AnimationObject extends Anchor {
 
 	// Removes multiple attributes
 	// RETURNS: [Object] Key-value pairs of removed attributes
-	// * ...keys	- [String] List of attribute names
+	// * ...keys	- [string] List of attribute names
 	unsetAttributes( ...keys ) {
 		// Validate argument(s)
 		if ( !keys.every( k => typeof k==="string" ) )

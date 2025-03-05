@@ -3,7 +3,7 @@ console.log( 'jestAlert: js/mediacore/animation/AnimationAnimator.js loaded' );
 //-------------------------
 // AnimationAnimator Class
 //-------------------------
-// Manages a stack of animations for sequential updates.
+// Manages a pile of animations for sequential updates.
 class AnimationAnimator {
 	// Declare properties
 	canvas			= null;				// ElementCanvas [object] (for CanvasRenderingContext2D [object] drawing)
@@ -31,7 +31,7 @@ class AnimationAnimator {
 	// RETURNS: [void].
 	// * animation		- [object] Animation instance to add.
 	add( animation ) {
-		this.animations.add( animation );
+		this.animations.add( animation ); // Add animation
 	}
 
 	// Removes an animation from the stack of animations.
@@ -46,9 +46,10 @@ class AnimationAnimator {
 	//-------------------------
 	// Updates all animations in the stack of animations.
 	// RETURNS: [void].
-	// * elapsedTime	- how much time has passed since the ticker started.
-	// * tickDelay		- how much time between each tick (ie. 60ms)
-	// * tickCount		- how many ticks have occurred
+	// [object] {}
+	// 		* elapsedTime	- [int] how much time has passed since the ticker started.
+	// 		* tickDelay		- [int] how much time between each tick (ie. 60ms)
+	// 		* tickCount		- [int] how many ticks have occurred
 	update( { elapsedTime, tickDelay, tickCount } ) {
 		// Iterate each animation & update it
 		this.animations.forEach(

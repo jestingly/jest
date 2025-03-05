@@ -18,6 +18,9 @@ class Anchor extends OSCallback {
 	height		= null;				// [int] value of height of the [object] (minimum = 1).
 	units		= null;				// [int] value of grid (x,y) & width/height should conform to (defaults to 1px).
 
+	//-------------------------
+	// Instantiation
+	//-------------------------
 	// Initializes the object.
 	// * x			- [int] value of horizontal offset relative to parent(s)
 	// * y			- [int] value of vertical offset relative to parent(s)
@@ -34,7 +37,7 @@ class Anchor extends OSCallback {
 	}
 
 	//-------------------------
-	// Instantiation
+	// Debugging
 	//-------------------------
 	// Create a visual color/alpha to display anchor rectangle in the 'inspector' mode.
 	// RETURNS: [void].

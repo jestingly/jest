@@ -194,7 +194,7 @@ class AnimationView extends AnimationObject {
 		//-------------------------
 		// Complete Animation
 		//-------------------------
-		this.time	 = this.animation.duration;		// Cap time at the end
+		this.time	 = this.animation.duration; // Cap time at the end
 		this.pause();	      				// Pause the animation
 		this.emit( 'complete' );			// Emit end of sequence callback(s)
 	}
