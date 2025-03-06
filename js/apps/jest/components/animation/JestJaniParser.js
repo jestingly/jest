@@ -90,9 +90,9 @@ class JestJaniParser {
 		// Create animation [object]
 		const animation		= new AnimationAnimation( filename );
 		frames.forEach( frame=>animation.addFrame(frame) ); // iterate & add frame to animations
-		// Store the options in the animation as an attribute
+		// Store the options in the animation
 		animation.options	= opts;
-		// Store the groups in the animation as an attribute
+		// Store the groups in the animation
 		animation.groups	= groups;
 		// Preload attribute group name(s) into config as attribute(s)
 		// NOTE: This is used as default image(s) that can skinned/overrode.

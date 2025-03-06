@@ -89,8 +89,10 @@ class AnimationObject extends Anchor {
 		// Validate argument(s)
 		if ( typeof key!=="string" )
 			throw new TypeError( `setAttribute expects a string key, got ${typeof key}` );
+		// Get expected type
+		const expectedType	= this.validTypes[key];
 		// Check primitive types
-		if ( this.validTypes[key] ) {
+		if ( expectedType ) {
 			if ( typeof expectedType==="string" ) {
 				if ( expectedType==="array" && !Array.isArray(value) )
 					throw new TypeError( `Invalid type for "${key}". Expected an array.` );
