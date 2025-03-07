@@ -9,9 +9,11 @@ class OSConfigurable {
 	_temp			= {};			// [object] of temporary data for progressive actions
 	_clocks			= {};			// [object] of clocked time(s)
 
+	//-------------------------
+	// Constructor
+	//-------------------------
 	// Initializes a new OSConfigurable instance.
-	// RETURNS: [void] Nothing.
-	// * options		- [Object] Configuration options.
+	// * options		- [object] Configuration options.
 	constructor( options={} ) {
 		// Save argument data
 		this._options		= options;
@@ -22,7 +24,7 @@ class OSConfigurable {
 	//-------------------------
 	// Sets or updates a variable in the container.
 	// RETURNS: [void].
-	// * name		- [string|Array<string>] Path name or group + key (e.g., ['group', 'key']).
+	// * name		- [string|array<string>] Path name or group + key (e.g., ['group', 'key']).
 	// * value		- [...] Value to store.
 	set( name, value ) {
 		if ( Array.isArray(name) ) {
@@ -38,8 +40,8 @@ class OSConfigurable {
 	}
 
 	// Retrieves a variable from the container (optionally removes it).
-	// RETURNS: [...] Value of the variable, or false if not found.
-	// * name		- [string|Array<string>] Path name or group + key.
+	// RETURNS: [...] Value of the variable, or `false` if not found.
+	// * name		- [string|array<string>] Path name or group + key.
 	// * wipe		- [boolean] Whether to remove the variable (default: false).
 	get( name, wipe=false ) {
 		if ( Array.isArray(name) ) {
@@ -64,8 +66,8 @@ class OSConfigurable {
 	}
 
 	// Checks if a variable exists in the container.
-	// RETURNS: [boolean] True if the variable exists, false otherwise.
-	// * name		- [string|Array<string>] Path name or group + key.
+	// RETURNS: [boolean] `true` if the variable exists, `false` otherwise.
+	// * name		- [string|array<string>] Path name or group + key.
 	has( name ) {
 		if ( Array.isArray(name) ) {
 			const [group,key] = name;
@@ -78,8 +80,8 @@ class OSConfigurable {
 	}
 
 	// Deletes variables from the container.
-	// RETURNS: [boolean] True if successful, false otherwise.
-	// * ...names	- [Array<string>] Path names or group + key to delete.
+	// RETURNS: [boolean] `true` if successful, `false` otherwise.
+	// * ...names	- [array<string>] Path names or group + key to delete.
 	unset( ...names ) {
 		names.forEach( ( name ) => {
 			if ( Array.isArray(name) ) {
@@ -123,8 +125,8 @@ class OSConfigurable {
 	}
 
 	// Finds variables in `_data` by path patterns, including wildcards.
-	// RETURNS: [Object|false] Matches as key-value pairs, or false if no matches.
-	// * ...args	- [Array<string>] Paths or patterns to search for (e.g., 'group/*').
+	// RETURNS: [object|false] Matches as key-value pairs, or false if no matches.
+	// * ...args	- [array<string>] Paths or patterns to search for (e.g., 'group/*').
 	// NOTES:
 	// - Use `*` for wildcard matches (e.g., 'group/*').
 	// - If `snip` is provided, trims the specified number of path parts.
@@ -201,26 +203,20 @@ class OSConfigurable {
 	// Modal Methods
 	//-------------------------
 	// Set a mode state
+	// RETURNS: [bool] `true` on success, else `false`.
 	// * mode	- [string] name of mode to set.
 	// * state	- [string] value of mode.
-	// RETURNS: [bool] `true` on success, else `false`.
 	setMode( mode, state ) {
 		//console.log( 'jestAlert: Changing mode ...' );
-		// --------------------------------
-		// Push argument(s)
-		// --------------------------------
 		this._modes[mode]	= state;
 		return true; // success
 	}
 
 	// Get a mode state
-	// * mode	- [string] name of mode to set.
 	// RETURNS: [string] value of mode state.
+	// * mode	- [string] name of mode to set.
 	getMode( mode ) {
 		//console.log( 'jestAlert: Getting mode ...' );
-		// --------------------------------
-		// Push argument(s)
-		// --------------------------------
 		if ( !this._modes[mode] )
 			this._modes[mode]	= 'default';
 		return this._modes[mode]; // mode state
