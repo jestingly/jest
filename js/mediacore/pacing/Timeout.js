@@ -12,6 +12,9 @@ class Timeout extends OSCallback {
 	ticksEmitted	= 0;						// [int] Accumulates ticks to maintain precise # of tick intervals.
 	boundTick		= null;						// [function] Binds the tick method to preserve context.
 
+	// --------------------------
+	// Initialization
+	// --------------------------
 	// Initializes the timeout.
 	// * delay - [number] Time interval between ticks in milliseconds.
 	constructor() {
@@ -21,10 +24,35 @@ class Timeout extends OSCallback {
 		this.boundTick		= this.tick.bind( this );		// Preserve context for the tick method.
 	}
 
+	// --------------------------
+	// Toggling Method(s)
+	// --------------------------
+	// Starts the ticker.
+	// RETURNS: [void].
+	start() {
+		// Reset & recalibrate ticker if not running
+		if ( !this.running ) {
+			this.running		= true;						// Set the ticker to running state.
+			this.startTime		= performance.now();		// [number] Start time of ticker.
+			this.ticksEmitted	= 0;						// [int] # of "frames rendered".
+			requestAnimationFrame( this.boundTick );		// Schedule the first tick.
+		}
+	}
+
+	// Stops the ticker.
+	// RETURNS: [void].
+	stop() {
+		this.running = false; // Set the ticker to stopped state.
+	}
+
+	// --------------------------
+	// Rendering
+	// --------------------------
 	// Main tick method called on each frame.
 	// Calculates elapsed time, maintains consistent timing, and emits tick events.
 	// RETURNS: [void].
 	tick() {
+		// Require ticker event to be running
 		if ( !this.running ) return;
 		// Calculate time elapsed.
 		const now			= performance.now();			// Current time.
@@ -51,23 +79,5 @@ class Timeout extends OSCallback {
 			this.ticksEmitted	= this.ticksEmitted % 60;	// Reset counter
 		}
 		requestAnimationFrame( this.boundTick );			// Schedule the next tick.
-	}
-
-	// Starts the ticker.
-	// RETURNS: [void].
-	start() {
-		// Reset & recalibrate ticker if not running
-		if ( !this.running ) {
-			this.running		= true;						// Set the ticker to running state.
-			this.startTime		= performance.now();		// [number] Start time of ticker.
-			this.ticksEmitted	= 0;						// [int] # of "frames rendered".
-			requestAnimationFrame( this.boundTick );		// Schedule the first tick.
-		}
-	}
-
-	// Stops the ticker.
-	// RETURNS: [void].
-	stop() {
-		this.running = false; // Set the ticker to stopped state.
 	}
 }

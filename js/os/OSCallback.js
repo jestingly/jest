@@ -9,7 +9,6 @@ class OSCallback extends OSConfigurable {
 	// Initialization
 	//-------------------------
 	// Initializes a new OSCallbacks instance.
-	// RETURNS: [void] Nothing.
 	// * options		- [object] Configuration options.
 	//   callbacks		- [array] Array of callback definitions.
 	constructor( options={} ) {

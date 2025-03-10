@@ -241,6 +241,6 @@ class OSConfigurable {
 		// Output a report if requested
 		if ( report )
 			console.log( `Clock '${name}' recorded: ${elapsed / 1000} seconds` );
-		return time; // Return time
+		return elapsed; // Return time
 	}
 }
