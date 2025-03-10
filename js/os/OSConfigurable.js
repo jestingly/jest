@@ -3,8 +3,8 @@ console.log( 'jestAlert: js/os/OSConfigurable.js loaded' );
 // OSConfigurable class
 class OSConfigurable {
 	// Declare properties
-	_modes 			= {};			// [object] of mode statuses
 	_options		= {};			// specific options passed to constructor
+	_modes 			= {};			// [object] of mode statuses
 	_data			= {};			// [object] of misc. data to set internally
 	_temp			= {};			// [object] of temporary data for progressive actions
 	_clocks			= {};			// [object] of clocked time(s)
@@ -225,7 +225,7 @@ class OSConfigurable {
 	//-------------------------
 	// Timer Functions
 	//-------------------------
-	// Update some clock counter
+	// Timer method: returns elapsed time in milliseconds
 	//   name		- [string] Optional name of the clock (default: 'default')
 	//   datetime	- [boolean] Whether to log Date.now(), or performance ( defaults to false, e.g. performance.now() )
 	//   report		- [boolean] Whether to console log a report
@@ -233,17 +233,14 @@ class OSConfigurable {
 		// Ensure clock storage exists
 		if ( !this._clocks ) this._clocks = {};
 		// Get current timestamp
-		const now	= !datetime ? performance.now() : Date.now();
-		// Initialize clock if not set
-		if ( !this._clocks[name] )
-			this._clocks[name] = now;
+		const now		= !datetime ? performance.now() : Date.now();
 		// Calculate time difference
-		const time	= now - this._clocks[name];
+		const elapsed	= !this._clocks[name] ? 0 : now - this._clocks[name];
 		// Update stored timestamp
 		this._clocks[name] = now;
 		// Output a report if requested
 		if ( report )
-			console.log( `Clock '${name}' recorded: ${time / 1000} seconds` );
+			console.log( `Clock '${name}' recorded: ${elapsed / 1000} seconds` );
 		return time; // Return time
 	}
 }

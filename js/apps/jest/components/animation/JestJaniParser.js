@@ -11,7 +11,6 @@ class JestJaniParser {
 	// Instantiation
 	//-------------------------
 	// Construct the [object].
-	// RETURNS: [void].
 	constructor() {
 		// Define reserved keywords
 		this.keywords = new Set( ['ANI', 'ANIEND', 'ATTR', 'ATTREND', 'SPRITE'] );
@@ -97,22 +96,24 @@ class JestJaniParser {
 		// Preload attribute group name(s) into config as attribute(s)
 		// NOTE: This is used as default image(s) that can skinned/overrode.
 		animation.setAttribute( 'groups', Array.from(groups) );
-		return animation; // return animation [object]
+		return animation;
 	}
 
 	// Parses a JAni sprite definition
+	// RETURNS: [object] AnimationSprite generated from data.
+	// * line	- [string] Value of line to parse.
 	parseSpriteLine( line ) {
 		// Split each part of the line by space-key
 		const parts	= line.split( /\s+/ );
 		// Parse & return new Sprite [object]
 		return new AnimationSprite(
-			parseInt( parts[1] ),			// id
-			parts[2],						// group
-			parts.slice(7).join(' '),		// label (e.g., 'shadow', 'shield up')
-			parseInt( parts[3] ),			// sx
-			parseInt( parts[4] ),			// sy
-			parseInt( parts[5] ),			// width
-			parseInt( parts[6] )			// height
+			parseInt( parts[1] ),			// ID
+			parts[2],						// Group
+			parts.slice(7).join(' '),		// Label (e.g., 'shadow', 'shield up')
+			parseInt( parts[3] ),			// Source x
+			parseInt( parts[4] ),			// Source y
+			parseInt( parts[5] ),			// Width
+			parseInt( parts[6] )			// Height
 			);
 	}
 

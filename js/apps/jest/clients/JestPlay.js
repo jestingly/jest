@@ -179,7 +179,7 @@ JestAppsRegistry.AppJestPlay =
 			player.level		= 'level13';
 			player.anchor.move( 10, 10 );
 			// --------------------------------
-			// Add Ticker Event(s) [objects]
+			// Add Ticker Event(s)
 			// --------------------------------
 			this.timeout.register( 'tick', 'gameboard', e=>gameboard.update(e) );
 			this.timeout.register( 'tick', 'animator', e=>animator.update(e) );

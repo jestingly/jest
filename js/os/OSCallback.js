@@ -5,10 +5,13 @@ class OSCallback extends OSConfigurable {
 	// Element properties
 	handlers		= {};			// [array] of event callback(s): [{ command, id, callback, type }]
 
+	//-------------------------
+	// Initialization
+	//-------------------------
 	// Initializes a new OSCallbacks instance.
 	// RETURNS: [void] Nothing.
-	// * options		- [Object] Configuration options.
-	//   callbacks		- [Array] Array of callback definitions.
+	// * options		- [object] Configuration options.
+	//   callbacks		- [array] Array of callback definitions.
 	constructor( options={} ) {
 		super( options ); // call parent constructor
 		// Store callbacks
@@ -21,7 +24,7 @@ class OSCallback extends OSConfigurable {
 	//-------------------------
 	// Initializes callbacks from options (if provided).
 	// RETURNS: [void] Nothing.
-	// * callbacks		- [Array] Array of callback definitions.
+	// * callbacks		- [array] Array of callback definitions.
 	_initializeCallbacks( callbacks ) {
 		callbacks.forEach(
 			( { command, id, callback, type='manual', iterations=null, data={} } ) => {
@@ -37,10 +40,10 @@ class OSCallback extends OSConfigurable {
 	// RETURNS: [boolean] `true` on success else `false` on fail.
 	// * command		- [string] Name of the event to register under.
 	//   id				- [string] Unique ID for the callback.
-	//   callback		- [Function] The callback function.
+	//   callback		- [function] The callback function.
 	//   type			- [string] Type of callback (default: 'manual').
 	//   iterations		- [number|null] How many times the callback can be invoked (null = unlimited).
-	//   data			- [Object] Optional additional data about the callback.
+	//   data			- [object] Optional additional data about the callback.
 	register( command, id, callback, type='manual', iterations=null, data={} ) {
 		if ( !this.handlers[command] ) {
 			this.handlers[command] = [];
@@ -57,8 +60,8 @@ class OSCallback extends OSConfigurable {
 	// Emits all callbacks under an event name.
 	// RETURNS: [void] Nothing.
 	// * command		- [string] Name of the event to emit.
-	//   limit    		- [Int] Max number of callbacks to execute (null = all, default: all).
-	//   args			- [any[]] Arguments to pass to the callbacks.
+	//   limit    		- [int] Max number of callbacks to execute (null = all, default: all).
+	//   args			- [any] Arguments to pass to the callbacks.
 	emit( command, limit=null, ...args ) {
 		const callbacks = this.handlers?.[command];
 		if ( !callbacks || !Array.isArray(callbacks) ) {
@@ -79,7 +82,7 @@ class OSCallback extends OSConfigurable {
 	// RETURNS: [void] Nothing.
 	// * command		- [string] Name of the event.
 	//   id				- [string] ID of the callback to trigger.
-	//   args			- [any[]] Arguments to pass to the callback.
+	//   args			- [any] Arguments to pass to the callback.
 	_trigger( command, id, ...args ) {
 		const callbacks = this.handlers?.[command];
 		if ( !callbacks ) {
