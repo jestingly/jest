@@ -31,11 +31,11 @@ class JestTransmitter {
 	// Gather and process multiple file requests in batches
 	// This function handles fetching multiple files in parallel while leveraging caching
 	// to avoid redundant network requests.
-	// * files		- [Array] Array of objects { url: [string], responseType: [string] }
-	// * batchSize	- [Number] Number of files to process simultaneously (default: 5)
-	// * cacheTime	- [Number] Duration (in ms) to cache the response (default: this.defaultCacheTime)
-	// * strict		- [Boolean] If true, prevents the cache from being forcefully cleared
 	// RETURNS: [void] (Updates internal cache)
+	// * files		- [array] Array of objects { url: [string], responseType: [string] }
+	// * batchSize	- [number] Number of files to process simultaneously (default: 5)
+	// * cacheTime	- [number] Duration (in ms) to cache the response (default: this.defaultCacheTime)
+	// * strict		- [boolean] If true, prevents the cache from being forcefully cleared
 	async loadFiles( files, batchSize=5, cacheTime=this.defaultCacheTime, strict=false ) {
 		const now	= Date.now(); // Capture the current timestamp
 		// Iterate through the file list in chunks of batchSize
@@ -75,9 +75,9 @@ class JestTransmitter {
 	}
 
 	// Load a file either from cache (if valid) or by making a new request
-	// * file		- [Object] { url: [string], responseType: [string] }
-	// * cacheTime	- [Number] Duration (in ms) to cache the response (default: this.defaultCacheTime)
-	// * strict		- [Boolean] If true, prevents the cache from being forcefully cleared
+	// * file		- [object] { url: [string], responseType: [string] }
+	// * cacheTime	- [number] Duration (in ms) to cache the response (default: this.defaultCacheTime)
+	// * strict		- [boolean] If true, prevents the cache from being forcefully cleared
 	async loadFile( file, cacheTime=this.defaultCacheTime, strict=false ) {
 		//const cacheTime		= file.cacheTime ?? this.defaultCacheTime;
 		//const strict		= file.strict ?? false;
@@ -113,9 +113,9 @@ class JestTransmitter {
 	}
 
 	// Handles the network request, processes the response, and stores it in cache
-	// * inquiry	- [Object] Inquiry request object containing file details
-	// * cacheTime	- [Number] How long to store the file in cache (in ms)
-	// * strict		- [Boolean] If true, prevents certain files from being forcefully flushed
+	// * inquiry	- [object] Inquiry request object containing file details
+	// * cacheTime	- [number] How long to store the file in cache (in ms)
+	// * strict		- [boolean] If true, prevents certain files from being forcefully flushed
 	async sendInquiry( inquiry, cacheTime, strict ) {
 		const transmission	= new Transmission();		// Create a new transmission instance
 		this.transmissions.push( transmission );		// Add to active transmissions
@@ -147,16 +147,16 @@ class JestTransmitter {
 	// Cached Data Handling
 	//-------------------------
 	// Retrieves one or multiple files from cache if they exist and are not expired.
-	// * urls	- [Array/String] A single URL (string) or an array of URLs to retrieve.
-	// RETURNS: [Object | Array | null] Cached file object(s) or null if not found.
+	// RETURNS: [object | array | null] Cached file object(s) or null if not found.
+	// * urls	- [array/string] A single URL (string) or an array of URLs to retrieve.
 	// FILE OBJECT STRUCTURE:
 	// {
-	//   blob: [Blob|null],			// The raw file data as a Blob (if applicable)
-	//   parsed: [Any],				// The parsed file data
-	//   objectURL: [String|null],	// A generated object URL for usage in DOM (if applicable)
-	//   responseType: [String],	// The type of response (e.g., 'json', 'blob', 'text')
-	//   expiresAt: [Number],		// Timestamp indicating when the cache entry expires
-	//   strict: [Boolean]			// Whether the file is protected from automatic cache flushing
+	//   blob: [blob|null],			// The raw file data as a Blob (if applicable)
+	//   parsed: [any],				// The parsed file data
+	//   objectURL: [string|null],	// A generated object URL for usage in DOM (if applicable)
+	//   responseType: [string],	// The type of response (e.g., 'json', 'blob', 'text')
+	//   expiresAt: [number],		// Timestamp indicating when the cache entry expires
+	//   strict: [boolean]			// Whether the file is protected from automatic cache flushing
 	// }
 	getFiles( urls ) {
 		const now = Date.now(); // Current timestamp
@@ -179,8 +179,8 @@ class JestTransmitter {
 	}
 
 	// Clears expired cache entries or removes all cached files based on options
-	// * removeAll	- [Boolean] If true, removes all cached items
-	// * force		- [Boolean] If true, allows forced removal of "strict" items
+	// * removeAll	- [boolean] If true, removes all cached items
+	// * force		- [boolean] If true, allows forced removal of "strict" items
 	flushCache( { removeAll=false, force=false }={} ) {
 		const now	= Date.now(); // Capture current timestamp
 		// Iterate through cached items
@@ -211,8 +211,8 @@ class JestTransmitter {
 	}
 
 	// Removes a specific file from cache, with optional strict override
-	// * url	- [String] File URL to remove from cache
-	// * force	- [Boolean] If true, forces removal even if the file is marked as "strict"
+	// * url	- [string] File URL to remove from cache
+	// * force	- [boolean] If true, forces removal even if the file is marked as "strict"
 	removeFromCache( url, force=false ) {
 		// Check if cache is available
 		if ( this.results.has(url) ) {
