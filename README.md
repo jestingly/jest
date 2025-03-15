@@ -1,13 +1,13 @@
 # JEST® | Jest Game Engine
 
-JEST® is a lightweight 2D game engine inspired by Graal, written in JavaScript. It features an asset/resource management system and aims to provide an interactive framework for browser-based games.
+JEST® is a full-featured 2D game engine inspired by Graal, built in JavaScript. It provides a pseudo-OS framework where developers can create applications, including **JestPlay**, a complete game engine for tile-based worlds, animations, and asset management.
 
 ## Features
 
 - **Tile-based game mechanics** similar to Graal.
-- **Dynamic asset management** for loading sprites, sounds, and other resources.
+- **Dynamic asset loading** via JestFiler, JestTransmitter, and JestGallery.
 - **Event-driven system** for handling in-game interactions.
-- **Customizable game logic** using JavaScript.
+- **Customizable animation system** using JestFantascope.
 - **Lightweight and optimized** for browser performance.
 - **Pseudo-OS Interface** with simulated windowed applications.
 
@@ -31,22 +31,22 @@ JEST® is a lightweight 2D game engine inspired by Graal, written in JavaScript.
 
 JEST functions as a **browser extension-based pseudo-OS** with its own application framework. The core system mimics a Windows-like startup environment where users can interact with **DockShortcut icons** and launch apps inside **simulated window GUIs**.
 
-### **JestPlay (Game Application)**
-
-JestPlay is the primary game client inside Jest. It runs as an application within Jest OS and features:
-
+### **JestPlay: The Game Engine**
+JestPlay is a full **2D game development framework** running inside Jest OS. It provides:
 - **Tile-based world rendering** using JestGameboard.
 - **Player movement & animations** handled by JestPlayer.
-- **Sound, tileset, and NPC management** via JestGameboard.
-- **Event-driven system** with a TaskManager for game logic.
+- **Dynamic asset management** through JestFiler, JestGallery, and JestTransmitter.
+- **Advanced animation playback** with JestFantascope.
 
 ### **Core Components:**
 
 - **JestPlay** → The main game client that launches inside Jest OS.
 - **JestGameboard** → Manages the game world, objects, and rendering.
 - **JestPlayer** → Handles player movement, animations, and interactions.
-- **TaskManager** → Manages game logic execution and background tasks.
-- **Panel System** → Simulated OS window framework for applications.
+- **JestFiler** → Handles all file-based operations (downloads, preloading, definitions).
+- **JestTransmitter** → Loads, caches, and prevents redundant network requests.
+- **JestGallery** → Organizes and loads **image assets** into categories.
+- **JestFantascope** → Plays animations for characters, NPCs, and effects.
 
 ### **How to Launch JestPlay**
 
@@ -58,34 +58,28 @@ JestPlay is the primary game client inside Jest. It runs as an application withi
 ## Asset Management
 
 ### **How Assets Are Loaded & Preloaded**
-
-- Jest uses **JestLibraryRegistry** to register and manage asset libraries.
-- The **librarian in JSOSEnvironment** handles retrieving assets dynamically.
-- **JestGameboard** loads and manages:
-  - `tilesets` → Stores **JestTileset** objects for map rendering.
-  - `overworlds` → Stores **JestOverworld** objects (NPCs, interactables, etc.).
-  - `sounds` → Manages **JestSound** objects for sound effects.
+- **JestFiler** manages all **file operations**, handling downloads and preloading.
+- **JestTransmitter** ensures efficient asset delivery, using caching and request control.
+- **JestGallery** organizes **image-based assets** into structured categories.
+- **JestFantascope** applies **animations** to characters, tiles, and world objects.
 
 ### **Adding Custom Assets**
-
 To add new tilesets, NPCs, or sounds:
-
 1. Place assets in the appropriate folders (`images/`, `sounds/`, etc.).
-2. Modify `JestGameboard.js` to register your custom assets.
-3. Ensure assets are referenced properly within `JestLibraryRegistry`.
-4. Use `TaskManager` to load assets dynamically at runtime.
+2. Modify `JestGallery.js` to register your custom assets.
+3. Update `JestFiler.js` to ensure the engine recognizes the new files.
+4. Use direct asset inquiries in JestTransmitter to load assets dynamically.
 
-### **Overriding Existing Assets**
+### **Overriding & Customizing Assets**
+- **Modify `JestGallery`** to categorize and replace images.
+- **Adjust `JestFantascope`** for sprite-based animation effects.
+- **Use `JestFiler` to define parsing rules for new asset formats.**
+- **Extend `JestPlayer.js`** to swap out player animations and sprite sheets.
 
-- Modify `JestLibraryRegistry` to replace asset references.
-- Update `JestGameboard`'s `tilesets` or `overworlds` object to use new assets.
-- Use `JestPlayer.js` to change player animations and models.
-
-### **Customization & Modding**
-
-- Modify `JestGameboard.js` to create custom maps, NPCs, and objects.
-- Extend `JestPlayer.js` to add new abilities and animations.
-- Use `TaskManager.js` to add interactive events and scripted behaviors.
+### **Customizing Animation Sequences**
+- JestFantascope enables frame-based **sprite animations**.
+- Modify `JestFantascope.js` to adjust animation speeds, transitions, and effects.
+- Animation events can be triggered dynamically using custom event handlers.
 
 ## Contributing
 
