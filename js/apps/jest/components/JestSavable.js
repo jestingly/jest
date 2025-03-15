@@ -12,8 +12,8 @@ class JestSavable extends JestGamepiece {
 	// Constructor
 	//-------------------------
 	// Initializes the savable [object].
+	// * name		- [string] Value of player username (e.g. 'Antago').
 	// * client		- [object] Application client that this piece belongs to.
-	// * username	- [string] Value of player username (e.g. 'Antago').
 	constructor( client, name ) {
 		super( client );				// construct the parent
 		this.setName( name );			// set the savable [object] name

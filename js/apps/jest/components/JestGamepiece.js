@@ -21,7 +21,7 @@ class JestGamepiece extends OSCallback {
 		// --------------------------------
 		// Create Anchor [object]
 		// --------------------------------
-		// Creator anchor [object] for moving & size specifications
+		// Create an anchor [object] for moving & size specifications
 		const anchor	= new Anchor();				// create central anchor
 		anchor.move( 0, 0 );						// move anchor to default position
 		this.anchor		= anchor;					// store anchor as property

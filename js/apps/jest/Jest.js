@@ -18,13 +18,18 @@ class Jest extends Application {
 	timeout			= null;					// 16ms delay for ~60 FPS (1000ms / 60 ≈ 16ms).
 	io				= null;					// JestInputOutput [object] for interaction
 
+	// --------------------------------
+	// Constructor
+	// --------------------------------
 	// Creates the application.
-	// RETURNS: [bool] `true` on success, else `false`.
 	// * options	- [object] Configuration options for the application.
 	constructor() {
 		super();		// call the parent application constructor
 	}
 
+	// --------------------------------
+	// Initialization
+	// --------------------------------
 	// Setup the application.
 	// RETURNS: [boolean] `true` on success else `false` on fail.
 	async setup() {
@@ -105,7 +110,7 @@ class Jest extends Application {
 		return true; // success
 	}
 
-	// Build the gameboard, player, components, etc.
+	// Build the configuration, inspector, timer, i/o, etc.
 	// RETURNS: [boolean] `true` on success else `false` on fail.
 	async build() {
 		// --------------------------------
