@@ -14,8 +14,9 @@ class JestWorldling extends JestSavable {
 	// Initializes the game piece [object].
 	// RETURNS: [void].
 	// * client		- [object] Application client that this piece belongs to.
-	constructor( client ) {
-		super( client );			// construct the parent
+	// * name		- [string] Value of player username (e.g. 'Antago').
+	constructor( client, name ) {
+		super( client, name );			// construct the parent
 	}
 
 	// --------------------------------

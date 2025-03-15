@@ -39,8 +39,9 @@ class JestPlayer extends JestWorldling {
 	// Initializes the Player.
 	// RETURNS: [void].
 	// * client		- client [object] that this piece belongs to.
-	constructor( client ) {
-		super( client );				// construct the parent
+	// * name		- [string] Value of player username (e.g. 'Antago').
+	constructor( client, name ) {
+		super( client, name );			// construct the parent
 		// Load player data
 		this.load();
 		// Setup recognizable gears
